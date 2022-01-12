@@ -7,11 +7,14 @@
             <div class="card">
                 <div class="card-header">Empleados
                     <a href="{{route('empleados.create')}}" class="text-success">
-                      <i class="bi bi-person-plus"></i>
+                      <i class="bi bi-person-plus" title="Agregar"></i>
                     </a>
                         <a href="{{route('reporte.pdf')}}" class="text-success">
-                          <i class="bi bi-file-pdf"></i>
+                          <i class="bi bi-file-pdf" title="Reporte en PDF"></i>
                         </a>
+                            <a href="{{route('reporte.excel')}}" class="text-success">
+                              <i class="bi bi-file-excel" title="Reporte en Excel"></i>
+                            </a>
                   </div>
 
                 <div class="card-body">
@@ -42,16 +45,16 @@
                                 <td>{{$empleado->Estatus->descripcion}}</td>
                                 <td>
                                   <a href="{{route('empleados.edit',$empleado->id)}}" class="text-success">
-                                  <i class="bi bi-pencil"></i>
+                                  <i class="bi bi-pencil" title="Editar"></i>
                                 </a>
                                 <a href="{{route('empleados.show',$empleado->id)}}" class="text-success">
-                                  <i class="bi bi-eye"></i>
+                                  <i class="bi bi-eye" title="Ver"></i>
                                 </a>
                                 <a href="{{route('empleados.delete',$empleado->id)}}" class="text-success">
-                                  <i class="bi bi-trash"></i>
+                                  <i class="bi bi-trash" title="Eliminar"></i>
                                 </a>
                                 <a href="{{route('calculo.show',$empleado->id)}}" class="text-success">
-                                  <i class="bi bi-calculator"></i>
+                                  <i class="bi bi-calculator" title="Calcular salario"></i>
                                 </a>
                               </td>
                             </tr>

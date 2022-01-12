@@ -6,9 +6,11 @@ use Illuminate\Http\Request;
 use App\Empleado;
 use App\Puesto;
 use App\Estatus;
+use App\Exports\ReporteEstatus;
 use View;
 use Validator;
 use PDF;
+use Excel;
 
 class EmpleadosController extends Controller
 {
@@ -28,6 +30,10 @@ class EmpleadosController extends Controller
       $estatus = Estatus::all();
       $pdf = PDF::loadView('empleados.pdf',array('estatus' =>$estatus));
       return $pdf->download('estatus'.mt_rand().'.pdf');
+    }
+
+    public function excel(){
+      return Excel::download(new ReporteEstatus, 'estatus'.mt_rand().'.xlsx');
     }
 
     /**

@@ -29,6 +29,7 @@ Route::resource('empleados', 'EmpleadosController');
 Route::resource('calculo', 'CalculoSalarioController');
 Route::get('/empleados/{id}/eliminar', 'EmpleadosController@delete')->name('empleados.delete');
 Route::get('/reporte', 'EmpleadosController@pdf')->name('reporte.pdf');
+Route::get('/reporte/excel', 'EmpleadosController@excel')->name('reporte.excel');
 Route::get('/calculo/{id}/salario', 'CalculoSalarioController@salario')->name('calculo.salario');
 Route::get('/calculo/{id}/puesto', 'CalculoSalarioController@puesto')->name('calculo.puesto');
 Route::get('/calculo/{id}/estatus', 'CalculoSalarioController@estatus')->name('calculo.estatus');
