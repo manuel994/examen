@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+  return redirect()->route('login');
 });
 
 Auth::routes();
@@ -28,6 +28,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('empleados', 'EmpleadosController');
 Route::resource('calculo', 'CalculoSalarioController');
 Route::get('/empleados/{id}/eliminar', 'EmpleadosController@delete')->name('empleados.delete');
+Route::get('/reporte', 'EmpleadosController@pdf')->name('reporte.pdf');
 Route::get('/calculo/{id}/salario', 'CalculoSalarioController@salario')->name('calculo.salario');
 Route::get('/calculo/{id}/puesto', 'CalculoSalarioController@puesto')->name('calculo.puesto');
 Route::get('/calculo/{id}/estatus', 'CalculoSalarioController@estatus')->name('calculo.estatus');

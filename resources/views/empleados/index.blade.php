@@ -9,6 +9,9 @@
                     <a href="{{route('empleados.create')}}" class="text-success">
                       <i class="bi bi-person-plus"></i>
                     </a>
+                        <a href="{{route('reporte.pdf')}}" class="text-success">
+                          <i class="bi bi-file-pdf"></i>
+                        </a>
                   </div>
 
                 <div class="card-body">

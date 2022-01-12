@@ -8,6 +8,7 @@ use App\Puesto;
 use App\Estatus;
 use View;
 use Validator;
+use PDF;
 
 class EmpleadosController extends Controller
 {
@@ -21,6 +22,12 @@ class EmpleadosController extends Controller
         //
         $empleados = Empleado::all();
         return View::make('empleados.index')->with('empleados', $empleados);
+    }
+
+    public function pdf(){
+      $estatus = Estatus::all();
+      $pdf = PDF::loadView('empleados.pdf',array('estatus' =>$estatus));
+      return $pdf->download('estatus'.mt_rand().'.pdf');
     }
 
     /**
